@@ -1,16 +1,13 @@
 #Zadanie 1 Napisz funkcję sprawdzająca czy 1 liczba jest podzielna przez druga użyj - %%
 
-n <- 1000
-m <- 3
-
-funkcjaSprawdzajacaPodzielnosc <- function(n,m){
+funkcjaNaPodzielnosc <- function(n,k){
   
-  if(n%%m == 0){
-    cat("Liczba ",n," jest podzielna przez",m,"\n")
-  }
-  if(n%%m != 0 || n/m < 0){
-    cat("Liczba ",n," nie jest podzielna przez",m,"\n")
-  }
+  if(n%%k == 0){cat("Liczba ",n," jest podzielna przez",k,"\n")}
+  if(n%%k != 0 || n/k < 0){cat("Liczba ",n," nie jest podzielna przez",k,"\n")}
 }
 
-funkcjaSprawdzajacaPodzielnosc(n,m)
+
+n <- 700
+k <- 3    
+
+funkcjaNaPodzielnosc(n,k)

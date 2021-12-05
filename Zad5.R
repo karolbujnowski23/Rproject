@@ -51,22 +51,4 @@ liczZplikow <- function(sciezka,nazwaKolumny,jakaFunkcja,DlaIluPlikow){
 }
 
 
-liczZplikow("F:/PJAKT/My_R_Projekts/smogKrakow","X142_pressure","mean",1)
-liczZplikow("F:/PJAKT/My_R_Projekts/smogKrakow","X142_pressure","max",1)
-liczZplikow("F:/PJAKT/My_R_Projekts/smogKrakow","X142_pressure","min",1)
-liczZplikow("F:/PJAKT/My_R_Projekts/smogKrakow","X142_pressure","mediana",1)
-
-liczZplikow("F:/PJAKT/My_R_Projekts/smogKrakow","X142_pressure","mean",2)
-liczZplikow("F:/PJAKT/My_R_Projekts/smogKrakow","X142_pressure","max",2)
-liczZplikow("F:/PJAKT/My_R_Projekts/smogKrakow","X142_pressure","min",2)
-liczZplikow("F:/PJAKT/My_R_Projekts/smogKrakow","X142_pressure","mediana",2) 
-
-liczZplikow("F:/PJAKT/My_R_Projekts/smogKrakow","X142_pressure","mean",3)
-liczZplikow("F:/PJAKT/My_R_Projekts/smogKrakow","X142_pressure","max",3)
-liczZplikow("F:/PJAKT/My_R_Projekts/smogKrakow","X142_pressure","min",3)
-liczZplikow("F:/PJAKT/My_R_Projekts/smogKrakow","X142_pressure","mediana",3) 
-
-liczZplikow("F:/PJAKT/My_R_Projekts/smogKrakow","X142_pressure","mean",9)
-liczZplikow("F:/PJAKT/My_R_Projekts/smogKrakow","X142_pressure","max",9)
-liczZplikow("F:/PJAKT/My_R_Projekts/smogKrakow","X142_pressure","min",9)
-liczZplikow("F:/PJAKT/My_R_Projekts/smogKrakow","X142_pressure","mediana",9) 
+liczZplikow("./smogKrakow","X142_pressure","mean",1)
