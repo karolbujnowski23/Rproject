@@ -5,14 +5,13 @@
 # W kolejnych wierszach zawartość wierszy ramki danych ( tyle wierszy ile podaliśmy w argumencie ile. ile=1 oznacza, 
 # że gdy użytkownik nie poda żadnej wartości jako parametr, domyślna wartością będzie 1)
 
-
 stworzDataFrame <- function(ile=1){
   Odp <- c()
-  Odp[1] <- readline("Prosze podac nazwe kolumny   ")
+  Odp[1] <- readline("podaj nazwe kolumny  ")
   
   while(TRUE){
     ile = ile + 1
-    Odp[ile] <- readline("Prosze podac wartosc  ")
+    Odp[ile] <- readline("podaj wartosc  ")
     if(nchar(Odp[ile])==0){
       break 
     }
@@ -28,4 +27,3 @@ stworzDataFrame <- function(ile=1){
   df
 }
 
-stworzDataFrame()

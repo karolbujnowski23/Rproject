@@ -1,12 +1,11 @@
 #5 Napisz funkcję , która pobiera sciezkeKatalogu, nazweKolumny, jakaFunkcje, DlaIluPlikow i liczy: 
 #mean, median,min,max w zależności od podanej nazwy funkcji w argumencie, z katologu który podaliśmy i z tylu plików ilu podaliśmy dla wybranej nazwy kolumny. 
-
 # mean, median,min,max 
 
-liczZplikow <- function(sciezka,nazwaKolumny,jakaFunkcja,DlaIluPlikow){ 
+liczpoplikach <- function(sciezkaKatalogu,nazwaKolumny,jakaFunkcja,DlaIluPlikow){ 
   
-  # Tworzymy liste z nazwami plikow w katalogu
-  list <- list.files(sciezka)
+  # Tworze liste z nazwami plikow w folderze
+  list <- list.files(sciezkaKatalogu)
   listaWynikow <- c()
   
   if(DlaIluPlikow>length(list)){
@@ -14,21 +13,20 @@ liczZplikow <- function(sciezka,nazwaKolumny,jakaFunkcja,DlaIluPlikow){
   }else{
     for(i in 1:DlaIluPlikow){
       
-      # zapisujemy zawartosc poszczegolnych plikow zapisujemy do zmiennej file
+      # zapisuje zawartosc poszczegolnych plikow zapisujemy do zmiennej file
       file <- list[i]
+      # Tworzy sciezki do poszczeglnych plikow laczac stringi
+      pathToFile <- paste(sciezkaKatalogu,file,sep="/")
       
-      # Tworzymy sciezki do poszczeglnych plikow laczac stringi
-      pathToFile <- paste(sciezka,file,sep="/")
-      
-      # Wczytujemy poszczegolne pliki
+      # Wczytuje poszczegolne pliki
       myDataFrame <- read.csv(pathToFile,sep = ",", header = TRUE, na.strings = c("","NA"))
       
       
-      # wyciagamy z pliku zawartosc poszczegolnej kolumny
+      # wyciaga z pliku zawartosc poszczegolnej kolumny
       myDataFrame <- na.omit(myDataFrame[[nazwaKolumny]])
       is.numeric(myDataFrame)
       
-      # zabezpieczenia na wypadek braku takiej kolumny w pliku
+      # zabezpieczenia na wypadek braku kolumny w pliku
       if(is.numeric(myDataFrame) == TRUE){
         if(jakaFunkcja == "mean"){
           listaWynikow[i] <- mean(myDataFrame)
@@ -51,4 +49,4 @@ liczZplikow <- function(sciezka,nazwaKolumny,jakaFunkcja,DlaIluPlikow){
 }
 
 
-liczZplikow("./smogKrakow","X142_pressure","mean",1)
+liczpoplikach("./smogKrakow","X142_pressure","mean",1)
