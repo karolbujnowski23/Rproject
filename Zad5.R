@@ -1,5 +1,5 @@
 #5 Napisz funkcję , która pobiera sciezkeKatalogu, nazweKolumny, jakaFunkcje, DlaIluPlikow i liczy: 
-#mean, median,min,max w zależności od podanej nazwy funkcji w argumencie, z katologu który podaliśmy i z tylu plików ilu podaliśmy dla wybranej nazwy kolumny. 
+#mean, median, min, max w zależności od podanej nazwy funkcji w argumencie, z katologu który podaliśmy i z tylu plików ilu podaliśmy dla wybranej nazwy kolumny. 
 # mean, median,min,max 
 
 liczpoplikach <- function(sciezkaKatalogu,nazwaKolumny,jakaFunkcja,DlaIluPlikow){ 
@@ -15,12 +15,11 @@ liczpoplikach <- function(sciezkaKatalogu,nazwaKolumny,jakaFunkcja,DlaIluPlikow)
       
       # zapisuje zawartosc poszczegolnych plikow zapisujemy do zmiennej file
       file <- list[i]
-      # Tworzy sciezki do poszczeglnych plikow laczac stringi
-      pathToFile <- paste(sciezkaKatalogu,file,sep="/")
+      # Tworzy sciezki do poszczeglnych plikow laczac str
+      filePath <- paste(sciezkaKatalogu,file,sep="/")
       
       # Wczytuje poszczegolne pliki
-      myDataFrame <- read.csv(pathToFile,sep = ",", header = TRUE, na.strings = c("","NA"))
-      
+      myDataFrame <- read.csv(filePath,sep = ",", header = TRUE, na.strings = c("","NA"))
       
       # wyciaga z pliku zawartosc poszczegolnej kolumny
       myDataFrame <- na.omit(myDataFrame[[nazwaKolumny]])
@@ -49,4 +48,4 @@ liczpoplikach <- function(sciezkaKatalogu,nazwaKolumny,jakaFunkcja,DlaIluPlikow)
 }
 
 
-liczpoplikach("./smogKrakow","X142_pressure","mean",1)
+liczpoplikach("./smogKrakow","X142_pressure","max",2)
